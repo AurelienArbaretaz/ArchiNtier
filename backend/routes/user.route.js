@@ -63,6 +63,21 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
   })
 })
 
+// DELETE User
+router.delete('/:id',  (req, res, next) => {
+  const url = req.protocol + '://' + req.get('host')
+  User.deleteOne({_id: req.params.id}).then(result => {
+    console.log(result);
+    res.status(201).json({
+      message: "User deleted successfully !",
+    })
+  }).catch(err => {
+    console.log(err),
+      res.status(500).json({
+        error: err
+      });
+  })
+})
 // GET All Users
 router.get("/", (req, res, next) => {
   User.find().then(data => {
