@@ -1,0 +1,8 @@
+<h1>Diaporama des photos</h1>
+<owl-carousel-o [options]="customOptions">
+    <ng-template *ngFor="let user of Users; let i = index" carouselSlide>
+      <div class="slide">
+        <img [src]="user.photo" alt="img {{i}}">
+      </div>
+    </ng-template>
+  </owl-carousel-o>

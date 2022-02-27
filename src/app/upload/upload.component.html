@@ -1,0 +1,28 @@
+<h1>Upload des photos</h1>
+<div class="container">
+    <div class="row">
+  
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+  
+        <!--div class="form-group">
+          <div class="preview" *ngIf="preview && preview !== null">
+            <img [src]="preview" [alt]="form.value.name">
+          </div>
+        </div-->
+
+        <div class="form-group">
+          <input type="file" (change)="uploadFile($event)" multiple>
+        </div>
+  
+        <div class="form-group input-group-lg">
+          <input class="form-control" placeholder="Comment" formControlName="comment">
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-danger btn-block btn-lg">Upload des photos</button>
+        </div>
+  
+      </form>
+  
+    </div>
+  </div>

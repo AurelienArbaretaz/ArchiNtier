@@ -1,0 +1,23 @@
+<h1>Liste des photos</h1>
+<div class="search-photo">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Chercher une photo par commentaire ">
+  </div>
+<div class="container user-table">
+    <ul class="list-unstyled">
+        <li class="media" *ngFor="let user of Users | filter:searchText">
+            <img [src]="user.photo" class="mr-3" [alt]="user.comment">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">{{user.comment}}</h5>
+                <div
+                button
+                
+                (click)="delete(user._id)"
+                style="color:red;"
+              >
+                Delete Image
+              </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
